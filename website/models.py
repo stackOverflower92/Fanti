@@ -131,10 +131,15 @@ class Paragraphs(models.Model):
     site_description = models.TextField()
     site_bio = models.TextField()
     header_image = models.ImageField(upload_to="uploads/images/paragraphs")
+    gallery_image = models.ImageField(upload_to="uploads/images/paragraphs")
+    tornitura_image = models.ImageField(upload_to="uploads/images/paragraphs")
+    fresatura_image = models.ImageField(upload_to="uploads/images/paragraphs")
     email = models.EmailField()
     phone = models.CharField(max_length=15)
     address = models.CharField(max_length=100)
     piva = models.CharField(max_length=100)
+    tornitura_description = models.TextField()
+    fresatura_description = models.TextField()
 
     def __str__(self):
         return "Descrizioni e Paragrafi"
