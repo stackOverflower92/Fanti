@@ -1,0 +1,46 @@
+{% include 'website/header.html' %}
+{% load staticfiles %}
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url({{ paragraphs.header_image.url }})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>{{ gallery_album.title }}</h1>
+                        <hr>
+                        <p class="text-muted">{{ gallery_album.caption }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Gallery -->
+    <div class="container">
+        <div class="row">
+            {% for image in album_images %}
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <div class="row">
+                        <div class="col-lg-12" style="background-image: url({{ image.file.url }}); background-size: cover;">
+                            <h3>{{ image.title }}</h3>
+                            <hr>
+                            <p class="text-muted">{{ image.caption }}</p>
+                        </div>
+                        <div class="col-lg-12">
+                            <a href="/gallery/{{ gallery_album.id }}/{{ image.id }}" class="btn btn-sm btn-default" style="width: 100%;">Apri</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 20px;">
+        <h3 class="text-muted">&larr; <a href="/gallery">Torna alla Galleria</a></h3>
+    </div>
+
+    <hr>
+
+{% include 'website/footer.html' %}

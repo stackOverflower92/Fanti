@@ -1,0 +1,21 @@
+{% include 'website/header.html' %}
+{% load staticfiles %}
+    <!-- Main Gallery -->
+    <div class="container" style="margin-top: 7%;">
+        <img src="{{ gallery_image.file.url }}" style="width: 100%; height: auto;">
+    </div>
+
+    <div class="container" style="margin-top: 20px;">
+        <h3 class="text-muted">&larr; <a href="/gallery/{{ gallery_album.id }}">Torna a: {{ gallery_album.title }}</a></h3>
+    </div>
+
+    <hr>
+
+    <!-- Hide navbar in this page -->
+    <style>
+        .navbar {
+            visibility: hidden;
+        }
+    </style>
+
+{% include 'website/footer.html' %}

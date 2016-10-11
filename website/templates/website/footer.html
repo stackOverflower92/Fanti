@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted">Copyright &copy; {{ paragraphs.site_name }} &middot; P. IVA: {{ paragraphs.piva }} &middot; e-mail: <a href="mailto:{{ paragraphs.email }}">{{ paragraphs.email }}</a> &middot; telefono: {{ paragraphs.phone }}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{% static 'website/vendor/jquery/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'website/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="{% static 'website/js/jqBootstrapValidation.js' %}"></script>
+    <script src="{% static 'website/js/contact_me.js' %}"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{% static 'website/js/clean-blog.min.js' %}"></script>
+
+</body>
+
+</html>

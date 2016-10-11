@@ -1,0 +1,31 @@
+{% include 'website/header.html' %}
+{% load staticfiles %}
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url({{ paragraphs.header_image.url }})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>{{ paragraphs.site_name }}</h1>
+                        <hr class="small">
+                        <span class="subheading">{{ paragraphs.site_description }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="jumbotron">
+            <h2 class="post-title">La Nostra Azienda</h2>
+            <hr>
+            <p class="post-meta">{{ paragraphs.site_bio }}</p>
+        </div>
+    </div>
+
+    <hr>
+
+{% include 'website/footer.html' %}
