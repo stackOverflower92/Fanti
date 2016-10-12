@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include 'website/header.html' %}
+{% load staticfiles %}
 
-</body>
-</html>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url({{ paragraphs.fresatura_image.url }})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Fresatura</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Display machines -->
+        <div class="row">
+            {% for machine in work_machines %}
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3>{{ machine.name }}</h3>
+                            <hr>
+                            <a href="/fresatura/{{ machine.id }}" class="btn btn-sm btn-default" style="width: 100%;">Apri</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% if work_machines.count == 0 %}
+                <div class="col-lg-12">
+                    <h3>Nessuna macchina presente in questa categoria</h3>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="container" style="margin-top: 20px;">
+        <h3 class="text-muted">&larr; <a href="/">Torna alla Home</a></h3>
+    </div>
+    <hr>
+
+{% include 'website/footer.html' %}

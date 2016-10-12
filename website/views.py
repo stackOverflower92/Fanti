@@ -39,27 +39,13 @@ def fresatura(request):
     return render(request, 'website/fresatura.html', context)
 
 
-def tmachine(request, machine_id):
-    machine = Machine.objects.get(id=machine_id)
+def machine(request, machine_id):
+    work_machine = Machine.objects.filter(id=machine_id).first()
     images = MachineImage.objects.filter(machine__id=machine_id)
     paragraphs = Paragraphs.objects.first()
 
     context = {
-        'machine': machine,
-        'images': images,
-        'paragraphs': paragraphs,
-    }
-
-    return render(request, 'website/machine.html', context)
-
-
-def fmachine(request, machine_id):
-    machine = Machine.objects.get(id=machine_id)
-    images = MachineImage.objects.filter(machine__id=machine_id)
-    paragraphs = Paragraphs.objects.first()
-
-    context = {
-        'machine': machine,
+        'work_machine': work_machine,
         'images': images,
         'paragraphs': paragraphs,
     }
